@@ -30,8 +30,7 @@
          bottom: 0;
          left: 0;
          height: 200px;
-         width:100%; 
-         text-align:center
+         text-align:center;
       }
       .ctr {
         opacity: 0;
@@ -72,30 +71,37 @@
         </nav>
       </div>
       <div class="divWithBgImage">
-        <div id="bigphone" class="centred">
-          <i class="fas fa-phone-square fa-10x"></i>
+        <div id="contactWidget" style="display:inline-flex">
           <div id="usertypechoice" class="centred ctr" style="height:80px">
-            <div style="display:inline-block;">
-              <button type="button" class="btn btn-primary btn-lg">Customer</button>
+              <div style="display:inline-block;">
+                <a href="tel:+642102825001">
+                  Customer
+                </a>
+              </div>
+              <div style="display:inline-block;">
+                <button type="button" class="btn btn-secondary btn-lg">Business</button>
+              </div>
             </div>
-            <div style="display:inline-block;">
-              <button type="button" class="btn btn-secondary btn-lg">Business</button>
-            </div>
-          </div>
+        </div>
+        <div id="bigphone" class="centred">
+            <i class="fas fa-phone-square fa-10x"></i>
         </div>
       </div>
     </body>
 
     <script>
-      $("#bigphone").hover(
-        function () {
-          $("#bigphone").fadeTo("slow",0,function(){});
-          $("#usertypechoice").fadeTo("slow",1,function(){});
-        },
-        function () {
-          $("#bigphone").fadeTo("slow",1,function(){});
-          $("#usertypechoice").fadeTo("slow",0,function(){});
-        }
+      function showUserTypeChoice () {
+        $("#bigphone").fadeTo("slow",0,function(){});
+        $("#usertypechoice").fadeTo("slow",1,function(){});
+      }
+
+      function hideUserTypeChoice () {
+        $("#bigphone").fadeTo("slow",1,function(){});
+        $("#usertypechoice").fadeTo("slow",0,function(){});
+      }
+
+      $("#bigphone").click(
+        function(){showUserTypeChoice()}
       );
 
       $("#bigphone").position({
