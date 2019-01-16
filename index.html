@@ -30,7 +30,8 @@
          bottom: 0;
          left: 0;
          height: 200px;
-         text-align:center;
+         width:100%; 
+         text-align:center
       }
       .ctr {
         opacity: 0;
@@ -54,10 +55,10 @@
           <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Customer</a>
+                <a class="nav-link" href="tel:+642102825001">Customer</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Business</a>
+                <a class="nav-link" href="tel:+642102825001">Business</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -71,37 +72,28 @@
         </nav>
       </div>
       <div class="divWithBgImage">
-        <div id="contactWidget" style="display:inline-flex">
-          <div id="usertypechoice" class="centred ctr" style="height:80px">
-              <div style="display:inline-block;">
-                <a href="tel:+642102825001">
-                  <button type="button" class="btn btn-primary btn-lg"></button>Customer</button>
-                </a>
-              </div>
-              <div style="display:inline-block;">
-                <button type="button" class="btn btn-secondary btn-lg">Business</button>
-              </div>
-            </div>
+        <div id="usertypechoice" class="centred ctr" style="height:80px">
+          <div style="display:inline-block;">
+            <button type="button" class="btn btn-primary btn-lg" 
+              onclick="window.location.href='tel:+642102825001'">Customer</button>
+          </div>
+          <div style="display:inline-block;">
+            <button type="button" class="btn btn-secondary btn-lg" 
+              onclick="window.location.href='tel:+642102825001'">Business</button>
+          </div>
         </div>
         <div id="bigphone" class="centred">
-            <i class="fas fa-phone-square fa-10x"></i>
+          <i class="fas fa-phone-square fa-10x"></i>
         </div>
       </div>
     </body>
 
     <script>
-      function showUserTypeChoice () {
-        $("#bigphone").fadeTo("slow",0,function(){});
-        $("#usertypechoice").fadeTo("slow",1,function(){});
-      }
-
-      function hideUserTypeChoice () {
-        $("#bigphone").fadeTo("slow",1,function(){});
-        $("#usertypechoice").fadeTo("slow",0,function(){});
-      }
-
       $("#bigphone").click(
-        function(){showUserTypeChoice()}
+        function () {
+          $("#bigphone").fadeTo("slow",0,function(){$("#bigphone").hide()});
+          $("#usertypechoice").fadeTo("slow",1,function(){});
+        }
       );
 
       $("#bigphone").position({
