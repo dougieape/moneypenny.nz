@@ -1,5 +1,8 @@
 $base-color: #d4c7b6;
 $action-color: #df5445;
+$primary-color: #d98f2e;
+$secondary-color: #d4cf4e;
+$tertiary-color: #9c7f59;
 
 html,body {
     height: 100%;
@@ -10,27 +13,63 @@ html,body {
     background: yellow;
   }
 
+.btn-primary {
+    background-image: none;
+    background-color: $primary-color;
+}
+
+.btn-secondary {
+    background-image: none;
+    background-color: $secondary-color;
+}
+
+.btn-primary:hover {
+    background-image: none !important;
+    background-color: $primary-color;
+    opacity: .6;
+}
+
+.btn-secondary:hover {
+    background-image: none !important;
+    background-color: $secondary-color;
+    opacity: .6;
+}
+
+#phone-button {
+    border-color:$tertiary-color;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    opacity: .3;
+}
+
 body {
-    font-family: 'Special Elite', cursive !important;
+    font-family: 'Oswald', sans-serif !important;
     background-color: $base-color !important;
 }
 
 h1 {font-family: 'Poppins', sans-serif;}
 
 nav.navbar {
-    background: none !important;
+    background: url(../phone-sun.jpeg) no-repeat center center !important;
     border: none !important;
+    background-size: cover !important;
 }
 
 .navbar-brand {
     max-width: 30vw;
 }
 
+#navbar {
+}
+
 #hero {
-    background: url(../phone-sun.jpeg) no-repeat center center;
+    background: none !important;
     min-height: 400px;
     border-radius: 10px;
-    animation: show-hero 2s ease forwards;
+    animation: show 2s ease forwards;
     height: 400px;
 }
 
@@ -66,6 +105,17 @@ nav.navbar {
 i.fa-phone-square:hover {
   opacity: 0.5 !important;
   color: red !important;
+}
+
+#phone-button {
+    background: url('../aliphone.png') center center no-repeat; 
+    background-size: contain;
+    background-color: $action-color;
+}
+
+#tagline {
+    opacity: 0;
+    animation: show 1s ease forwards 1.5s;
 }
 
 #logo path:nth-child(2) {
@@ -195,4 +245,25 @@ i.fa-phone-square:hover {
         transform: scale(1) translate(0px, 0px);
         border-radius: 10px;
     }
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #logo {
+        width: 250px;
+    }
+    p, p.lead {
+        font-size: 1rem;
+    }
+    nav.navbar {
+        background-size: unset !important;
+    }    
 }

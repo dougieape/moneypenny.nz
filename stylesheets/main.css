@@ -7,8 +7,40 @@ html, body {
   background: yellow;
 }
 
+.btn-primary {
+  background-image: none;
+  background-color: #d98f2e;
+}
+
+.btn-secondary {
+  background-image: none;
+  background-color: #d4cf4e;
+}
+
+.btn-primary:hover {
+  background-image: none !important;
+  background-color: #d98f2e;
+  opacity: 0.6;
+}
+
+.btn-secondary:hover {
+  background-image: none !important;
+  background-color: #d4cf4e;
+  opacity: 0.6;
+}
+
+#phone-button {
+  border-color: #9c7f59;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.3;
+}
+
 body {
-  font-family: "Special Elite", cursive !important;
+  font-family: "Oswald", sans-serif !important;
   background-color: #d4c7b6 !important;
 }
 
@@ -17,8 +49,9 @@ h1 {
 }
 
 nav.navbar {
-  background: none !important;
+  background: url(../phone-sun.jpeg) no-repeat center center !important;
   border: none !important;
+  background-size: cover !important;
 }
 
 .navbar-brand {
@@ -26,10 +59,10 @@ nav.navbar {
 }
 
 #hero {
-  background: url(../phone-sun.jpeg) no-repeat center center;
+  background: none !important;
   min-height: 400px;
   border-radius: 10px;
-  animation: show-hero 2s ease forwards;
+  animation: show 2s ease forwards;
   height: 400px;
 }
 
@@ -69,6 +102,17 @@ nav.navbar {
 i.fa-phone-square:hover {
   opacity: 0.5 !important;
   color: red !important;
+}
+
+#phone-button {
+  background: url("../aliphone.png") center center no-repeat;
+  background-size: contain;
+  background-color: #df5445;
+}
+
+#tagline {
+  opacity: 0;
+  animation: show 1s ease forwards 1.5s;
 }
 
 #logo path:nth-child(2) {
@@ -192,6 +236,27 @@ i.fa-phone-square:hover {
     opacity: 1;
     transform: scale(1) translate(0px, 0px);
     border-radius: 10px;
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #logo {
+    width: 250px;
+  }
+
+  p, p.lead {
+    font-size: 1rem;
+  }
+
+  nav.navbar {
+    background-size: unset !important;
   }
 }
 
